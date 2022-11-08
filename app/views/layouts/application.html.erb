@@ -46,7 +46,7 @@
 
     <% if user_signed_in? %>
 
-      <a class="dropdown-item" href="#">My Profile</a>
+      <%= button_to "Profile", user_path(current_user.id), class: "dropdown-item", method: :get %>
       <%= button_to "logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
 
     <% else %>
