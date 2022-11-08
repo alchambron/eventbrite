@@ -1,24 +1,7 @@
-# README
+# Project - 09/11/2022 - THP - Week 7 - Day 2 / Validant
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Eventobrito
 
-Things you may want to cover:
+The Eventobrito project is a full app in Rails, where you can create an account, sign in et add event.  
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Find the website here : https://eventobrito.fly.dev/events
