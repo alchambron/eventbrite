@@ -1,10 +1,37 @@
-<p style="color: green"><%= notice %></p>
+<div class ="text-center my-3">
+  <h1><%= @events.title %></h1>
+</div>
 
-<%= render @event %>
+<div class="my-5 text-center d-flex justify-content-center">
+  <div class="card", style="width: 24rem;">
 
-<div>
-  <%= link_to "Edit this event", edit_event_path(@event) %> |
-  <%= link_to "Back to events", events_path %>
+    <div class="card-body">
+      <h5 class="card-title">Titre de l'event</h5>
+        <p class="card-text"><%= @events.title %></p>
+      <hr>
+    </div>
 
-  <%= button_to "Destroy this event", @event, method: :delete %>
+    <div>
+      <h6 class="card-title">Description</h3>
+      <p class="card-text"><%= @events.description %></p>
+      <hr>
+    </div>
+
+
+    <div>
+      <p> Nombre d'inscrit : <%= @events.users.count %></p>
+      <p>Créateur de l'event : <%= @events.admin.first_name %> <%= @events.admin.last_name %></p>
+      <p>Date de début : <%= @events.start_date %></p>
+      <p>Lieu de l'event : <%= @events.location %></p>
+      <p>Prix : <%= @events.price %>€</p>
+
+    </div>
+  </div>
+  
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= button_to "Edit this event", edit_event_path(@events.id), class: "mx-2 btn btn-primary", method: :get%>
+  <%= button_to "Back to events", events_path, class: " mx-2 btn btn-success", method: :get %>
+  <%= button_to "Destroy this event", @events, class: "mx-2 btn btn-danger", method: :delete %>
 </div>
