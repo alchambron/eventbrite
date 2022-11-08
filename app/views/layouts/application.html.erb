@@ -25,13 +25,13 @@
 
     <%# Create link at left %>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">Eventbrite</a>
+    <a class="navbar-brand" href="/events">Eventbrite</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="/events">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Create Event</a>
+        <a class="nav-link" href="/events/new">Create Event</a>
       </li>
     </ul>
   </div>
@@ -43,10 +43,19 @@
   </a>
 
     <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-      <a class="dropdown-item" href="#">Login</a>
-      <a class="dropdown-item" href="#">Signup</a>
+
+    <% if user_signed_in? %>
+
       <a class="dropdown-item" href="#">My Profile</a>
-      <a class="dropdown-item" href="#">Logout</a>
+      <%= button_to "logout", destroy_user_session_path, class: "dropdown-item", method: :delete %>
+
+    <% else %>
+
+      <%= button_to "Sign In", new_user_session_path, class: "dropdown-item", method: :get %>
+      <%= button_to "Sign Up", new_user_registration_path, class: "dropdown-item", method: :get %>
+
+    <% end %>
+
     </div>
  </div>
 </nav>
